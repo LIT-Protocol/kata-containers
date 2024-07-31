@@ -14,7 +14,11 @@ use std::path::Path;
 use std::path::PathBuf;
 use thiserror::Error;
 
-#[cfg(any(target_arch = "s390x", target_arch = "powerpc64le"))]
+#[cfg(all(
+    target_arch = "s390x",
+    target_arch = "powerpc64",
+    target_endian = "little"
+))]
 use nix::unistd::Uid;
 
 #[cfg(target_arch = "x86_64")]
@@ -234,7 +238,7 @@ pub fn available_guest_protection() -> Result<GuestProtection, ProtectionError> 
     Ok(GuestProtection::Se)
 }
 
-#[cfg(target_arch = "powerpc64le")]
+#[cfg(target_arch = "]
 pub fn available_guest_protection() -> Result<check::GuestProtection, check::ProtectionError> {
     if !Uid::effective().is_root() {
         return Err(check::ProtectionError::NoPerms);
