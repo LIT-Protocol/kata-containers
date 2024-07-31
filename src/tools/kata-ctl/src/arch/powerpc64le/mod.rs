@@ -4,7 +4,7 @@
 //
 
 use crate::types::*;
-#[cfg(target_arch = "powerpc64le")]
+#[cfg(all(target_arch = "powerpc64", target_endian = "little"))]
 pub use arch_specific::*;
 
 mod arch_specific {
@@ -16,7 +16,7 @@ mod arch_specific {
     pub const ARCH_CPU_MODEL_FIELD: &str = "model";
 
     pub fn check() -> Result<()> {
-        unimplemented!("Check not implemented in powerpc64le");
+        unimplemented!("Check not implemented in powerpc64 little endian");
     }
 
     pub fn get_checks() -> Option<&'static [CheckItem<'static>]> {
