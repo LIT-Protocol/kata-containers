@@ -238,7 +238,7 @@ pub fn available_guest_protection() -> Result<GuestProtection, ProtectionError> 
     Ok(GuestProtection::Se)
 }
 
-#[cfg(target_arch = "]
+#[cfg(all(target_arch = "powerpc64", target_endian = "little"))]
 pub fn available_guest_protection() -> Result<check::GuestProtection, check::ProtectionError> {
     if !Uid::effective().is_root() {
         return Err(check::ProtectionError::NoPerms);
