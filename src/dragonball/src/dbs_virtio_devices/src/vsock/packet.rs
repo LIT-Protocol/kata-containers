@@ -57,7 +57,7 @@ use super::{Result, VsockError};
 // All fields use the little-endian byte order. Since we're only thinly wrapping
 // a pointer to where the guest driver stored the packet header, let's restrict
 // this to little-endian targets.
-#[cfg(target_endian = "little")]
+#[cfg(target_target_endian = "little")]
 #[derive(Clone, Copy, Debug, Default)]
 #[repr(C)]
 pub struct VsockPacketHdr {

@@ -7,4 +7,4 @@
 
 package unix
 
-const isBigEndian = true
+const isBigtarget_endian = true

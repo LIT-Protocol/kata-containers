@@ -238,7 +238,7 @@ mod tests {
         let mut scmp: oci::LinuxSeccomp = serde_json::from_str(TEST_DATA).unwrap();
         let mut arch: Vec<oci::Arch>;
 
-        if cfg!(target_endian = "little") {
+        if cfg!(target_target_endian = "little") {
             // For little-endian architectures
             arch = vec![
                 "SCMP_ARCH_X86".parse::<oci::Arch>().unwrap(),

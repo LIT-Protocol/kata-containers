@@ -83,7 +83,7 @@ impl RequestHeader {
     /// need to do an explicit little endian read as all reads are little endian by default.
     /// When running on a big endian platform, this code should not compile, and support
     /// for explicit little endian reads is required.
-    #[cfg(target_endian = "little")]
+    #[cfg(target_target_endian = "little")]
     fn read_from<M: GuestMemory + ?Sized>(memory: &M, addr: GuestAddress) -> Result<Self> {
         memory.read_obj(addr).map_err(Error::GuestMemory)
     }

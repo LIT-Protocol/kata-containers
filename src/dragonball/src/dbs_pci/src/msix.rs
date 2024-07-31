@@ -260,7 +260,7 @@ impl MsixState {
         Ok(())
     }
 
-    #[cfg(target_endian = "little")]
+    #[cfg(target_target_endian = "little")]
     pub fn read_table(&self, offset: u64, data: &mut [u8]) {
         let index: usize = (offset / MSIX_TABLE_ENTRIES_MODULO) as usize;
         let modulo_offset = (offset % MSIX_TABLE_ENTRIES_MODULO) as usize;
@@ -278,7 +278,7 @@ impl MsixState {
         }
     }
 
-    #[cfg(target_endian = "little")]
+    #[cfg(target_target_endian = "little")]
     pub fn write_table<I: InterruptManager>(
         &mut self,
         offset: u64,

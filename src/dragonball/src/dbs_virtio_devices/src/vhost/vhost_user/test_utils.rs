@@ -80,7 +80,7 @@ pub enum MasterReq {
     /// Send IOTLB messages with struct vhost_iotlb_msg as payload.
     IOTLB_MSG = 22,
     /// Set the endianness of a VQ for legacy devices.
-    SET_VRING_ENDIAN = 23,
+    SET_VRING_target_endian = 23,
     /// Fetch the contents of the virtio device configuration space.
     GET_CONFIG = 24,
     /// Change the contents of the virtio device configuration space.
