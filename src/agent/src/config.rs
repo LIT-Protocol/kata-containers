@@ -93,6 +93,7 @@ pub enum GuestComponentsProcs {
     ConfidentialDataHub,
 }
 
+#[allow(dead_code)]
 #[derive(Debug)]
 pub struct AgentConfig {
     pub debug_console: bool,
