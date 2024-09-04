@@ -393,7 +393,7 @@ func (object Object) QemuParams(config *Config) []string {
 		objectParams = append(objectParams, fmt.Sprintf("reduced-phys-bits=%d", object.ReducedPhysBits))
 		objectParams = append(objectParams, "kernel-hashes=on")
 		if object.SnpCertsPath != "" {
-			objectParams = append(objectParams, fmt.Sprintf("certs-path=%s", object.SnpCertsPath))
+			//objectParams = append(objectParams, fmt.Sprintf("certs-path=%s", object.SnpCertsPath))
 		}
 
 		driveParams = append(driveParams, "if=pflash,format=raw,readonly=on")
